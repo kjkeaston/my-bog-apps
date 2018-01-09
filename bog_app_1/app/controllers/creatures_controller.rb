@@ -9,9 +9,7 @@ class CreaturesController < ApplicationController
   end
 
   def create
-    creature_params_potato = params.require(:creature).permit(:name, :description, :age)
-
-    creature = Creature.new(creature_params_potato)
+    creature = Creature.new(creature_params)
     if creature.save
       redirect_to creatures_path
       # same as => redirect_to root_path
@@ -25,8 +23,31 @@ class CreaturesController < ApplicationController
     @creature_show_one = Creature.find_by_id(params[:id])
     # creature_id = params[:id]
     # @creature = Creature.find_by_id(creature_id)
+  end
 
-    
+  def edit
+    @creature = Creature.find_by_id(params[:id])
+  end
+
+  def update
+    creature_id = params[:id]
+    creature = Creature.find_by_id(creature_id)
+    creature.update_attributes(creature_params)
+    redirect_to creatures_path
+  end
+
+  def destroy
+    creature_id = params[:id]
+    creature = Creature.find_by_id(creature_id)
+    creature.destroy
+    redirect_to creatures_path
+  end
+
+
+  private
+
+  def creature_params
+    params.require(:creature).permit(:name, :description, :age)
   end
 
 

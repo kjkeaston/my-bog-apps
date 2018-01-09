@@ -3,4 +3,8 @@
 <h3><%= @creature_show_one.name %></h3>
 <p><%= @creature_show_one.description %> - <%= @creature_show_one.age %></p>
 
+<%= button_to "Delete", @creature, method: :delete, class: "btn btn-outline-danger" %>
+
+
+
 <%= link_to "Back to home", "/creatures" %>
