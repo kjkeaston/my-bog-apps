@@ -1,0 +1,10 @@
+<h2>One Creature, this one...</h2>
+
+<h3><%= @creature.name %></h3>
+<p><%=  @creature.description %></p>
+
+
+<%= button_to "Edit Creature", @creature, method: :update, class: "btn btn-outline-info" %>
+<%= button_to "Delete", @creature, method: :delete, class: "btn btn-outline-danger" %>
+
+<%= link_to "Back to home", "/creatures" %>

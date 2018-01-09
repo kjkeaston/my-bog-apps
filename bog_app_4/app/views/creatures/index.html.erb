@@ -1,0 +1,11 @@
+<h2>Some Creatures</h2>
+<% @creatures.each do |poptart| %>
+  <p>
+    <strong>NAME:</strong> 
+    <%= link_to poptart do %>
+      <%= poptart.name %>
+    <% end %>
+    <br>
+    <strong>DESC:</strong> <%= poptart.description %>
+  </p>
+<% end %>
