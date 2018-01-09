@@ -1,0 +1,18 @@
+<h1>Hello there! (creatures#index)</h1>
+
+<h3>Hi, Sunny!</h3>
+
+<button class="btn btn-outline-danger">Sunny click my button!</button>
+
+
+<ul>
+  <% @creatures_poptart.each do |creature_xyz| %>
+  <li> 
+    <%= link_to creature_xyz do %>
+      <%= creature_xyz.name%>
+    <% end %>
+     - <%= creature_xyz.description %> - <%= creature_xyz.age %>  
+  </li>
+  
+  <% end %>
+</ul>
