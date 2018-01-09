@@ -1,0 +1,10 @@
+<h2>Viewing one Creature (routes.rb ==> creatures#show)</h2>
+
+
+<h3><%= @creature.name %></h3>
+<p><%=  @creature.description %> - <%= @creature.age %></p>
+
+<%= button_to "Delete", @creature, method: :delete, class: "btn btn-outline-danger" %>
+
+<%= link_to "Back to home", "/creatures" %>
+

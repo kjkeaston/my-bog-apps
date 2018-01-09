@@ -1,0 +1,13 @@
+<h1>Hello there! (creatures#index)</h1>
+
+<% @creatures.each do |xyz| %>
+  <p>
+    <strong>Name:</strong>
+    <%= link_to xyz do %> 
+      <%= xyz.name %>
+    <% end %>
+      <br>
+    <strong>Description:</strong> <%= xyz.description %>
+    <strong>Age:</strong> <%= xyz.age %>
+  </p>
+<% end %>
