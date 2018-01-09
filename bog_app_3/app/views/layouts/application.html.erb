@@ -9,6 +9,12 @@
   </head>
 
   <body>
-    <%= yield %>
+
+    <div class="container">
+      <%= yield %>
+    </div>
+
+    <%= link_to "Make a new creature", "/creatures/new" %>
+
   </body>
 </html>
